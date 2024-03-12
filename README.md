@@ -1,6 +1,6 @@
 # Provenance Widgets Starter Code
 
-This repository contains the starter code for the [Provenance Widgets library](https://github.com/arpitnarechania/provenance-app/tree/main/widgets). Refer to the library's documentation for detailed information on how to use the widgets.
+This repository contains the starter code for the [Provenance Widgets library](https://github.com/arpitnarechania/provenance-app/tree/main/widgets). Refer to the library's documentation for detailed information on how to use the widgets. The widgets have been referenced in the [`app.component.ts`](https://github.com/kausko/provenance-widgets-starter/blob/master/src/app/app.component.ts) and [`app.component.html`](https://github.com/kausko/provenance-widgets-starter/blob/master/src/app/app.component.html) files.
 
 ## Getting Started
 
