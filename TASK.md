@@ -36,9 +36,42 @@ You will work with a [dataset on 802 Pokemon](./src/assets/pokemon.csv) from all
 
 
 ### What You Have to Do.
-1. Make a visualization system consisting of a visualization and a control panel. Feel free to use any visualization library that you are comfortable with (e.g., D3.js, Vega-Lite) but ensure that you can get to work with this codebase.
-2. Coming soon.
+0. You will be making a Pokemon Explorer for the Pokemon Fan Club! The fans would love to visually explore the Pokemon based on their name and stats. They may, hypothetically, select their dream team for a duel with one another! 
+1. Essentially, your task is to make a visualization system consisting of a visualization and a control panel. 
+    - By visualization, we mean a visual representation of (a subset of) the above dataset. Feel free to use any visualization library that you are comfortable with (e.g., D3.js, Vega-Lite) but ensure that you can get it to work with this codebase.
+    - By control panel, we mean a panel with a bunch of control UI elements such as single/range sliders, single/multiselect dropdowns, radiobuttons, checkboxes, input text, etc.
+    - Completely up to you how you want to position these elements relative to each other, i.e., the controls may or may not necessarily be in a conventionally separate panel.
+2. Note that for the control panel UI elements, you will _have to_ use ProvenanceWidgets. Some ideas on how you could utilize them:
+    - As Visualization specification elements, e.g., visual encodings such as x, y, color, etc, or filter or sort.
+    - As Visualization beautification elements, e.g., adjusting the font size, color, etc.
+    - Any other use-case that you seem apt.
+3. The ProvenanceWidgets:
+    - Should update the chart accordingly when interacted with, obviously, e.g., if I lookup a certain Pokemon by name, the visualization could filter/highlight that Pokemon.
+    - Should track and visualize provenance (which is what they're built to do). The specifics are up to you, e.g., if you want them to update per interaction vs. based on time.
+    - All of this, because, your Pokemon Fan Club client wishes to track fans' exploration criteria/behavior/strategy.
+4. ...Enjoy!
 
 
-### Need Help? Contact Us
-Please do not hesitate to email Arpit Narechania (arpitnarechania@gatech.edu) and Kaustubh Odak (kodak@gatech.edu).
+### Housekeeping
+5. As you are working with the ProvenanceWidgets and this starter-app, please keep noting down any kind of feedback that you feel can help us improve the library. It could be bugs, feature requests, happy moments, enhancements, anything. You can keep noting these inside [FEEDBACK.md](./FEEDBACK.md).
+6. Keep committing your changes often. We don't want you to lose your progress.
+7. Once you feel that you have accomplished the task, email us, and we will schedule the final 25-minute interview wherein we will go through your developed application and also your feedback.
+8. ...Enjoy, again!
+
+
+### Bonus
+9. Primarily, your task above is to establish a one-way communication from the widgets to the visualization, i.e., interact with the widgets (e.g., filter) and accordingly update the visualization. The bonus task involves establishing a two-way communication between the widgets and the visualization.
+10. For example:
+    - Widget to Vis: When I use a range slider to filter for a specific range (e.g., Height < 1), the visualization should update (obviously) and so should the visual provenance scents on the widgets (e.g., the Height range slider should show that I've filtered for Height < 1m). You are doing this for the above task any way.
+    - Vis to Widget: In this additional bonus configuration, any data point (pokemon) you interact with in the visualization (e.g., you hovered on a pokemon OR you brushed for a range of pokemons), the widgets should also update to reflect this operation. For instance, if Height is encoded on the X axis and if I apply a rectangular brush to highlight pokemons with Height between [0.4, 0.8], then the corresponding Height range slider should also update to show this (almost simulating the brushing event as if occurred due to the widget interaction as opposed to visualization interaction).
+        - To achieve this, ProvenanceWidgets have a `[(provenance)]` model property and `(provenanceChange)` event.
+        - You can modify the old/current provenance model and pass a `revalidate: true` property for the widgets to recompute underlying metrics and re-assign colors and sizes, basically reflect the new provenance. Below is a sample snippet in Typescript:
+        ```ts
+        newProvenanceModel = oldProvenanceModel ? { 
+            data: newProvenanceModel
+            revalidate: true
+          } : oldProvenanceModel;
+        ```
+
+### Need Help? Contact Us without Hesitation.
+Email Arpit Narechania (arpitnarechania@gatech.edu) and Kaustubh Odak (kodak@gatech.edu).
