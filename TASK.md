@@ -63,18 +63,7 @@ You will work with a [dataset on 802 Pokemon](./src/assets/pokemon.csv) from all
 9. Primarily, your task above is to establish a one-way communication from the widgets to the visualization, i.e., interact with the widgets (e.g., filter) and accordingly update the visualization. The bonus task involves establishing a two-way communication between the widgets and the visualization.
 10. For example:
     - Widget to Vis: When I use a range slider to filter for a specific range (e.g., Height < 1), the visualization should update (obviously) and so should the visual provenance scents on the widgets (e.g., the Height range slider should show that I've filtered for Height < 1m). You are doing this for the above task any way.
-    - Vis to Widget: In this additional bonus configuration, any data point (pokemon) you interact with in the visualization (e.g., you hovered on a pokemon OR you brushed for a range of pokemons), the widgets should also update to reflect this operation. For instance, if Height is encoded on the X axis and if I apply a rectangular brush to highlight pokemons with Height between [0.4, 0.8], then the corresponding Height range slider should also update to show this (almost simulating the brushing event as if occurred due to the widget interaction as opposed to visualization interaction).
-        - To achieve this, ProvenanceWidgets have a `[(provenance)]` model property and `(provenanceChange)` event.
-        - In the event callback for `(provenanceChange)`, you can modify the old/current provenance model by passing a new provenance model along with a `revalidate: true` flag for the widgets to recompute underlying metrics and reflect the new provenance model.
-
-        For example, if `oldProvenanceModel` has `{ data: oldProvenanceData, <other internally computed properties>}`, then to modify this old data, you can do the following:
-
-        ```ts
-        newProvenanceModel = oldProvenanceModel ? { 
-            data: newProvenanceModelData // this newProvenanceModelData is something you receive as a result of your interaction with the visualizations, e.g., Height=[0.4, 0.7]
-            revalidate: true // this property will recompute other internally computed properties based on the newProvenanceModelData.
-          } : oldProvenanceModel;
-        ```
+    - Vis to Widget: In this additional bonus configuration, any data point (pokemon) you interact with in the visualization (e.g., you hovered on a pokemon OR you brushed for a range of pokemons), the widgets should also update to reflect this operation. For instance, if Height is encoded on the X axis and if I apply a rectangular brush to highlight pokemons with Height between [0.4, 0.8], then the corresponding Height range slider should also update to show this (almost simulating the brushing event as if occurred due to the widget interaction as opposed to visualization interaction). To achieve this, you will have to manually update the `[(provenance)]` model (`data` property in particular) and pass an additional `revalidate:true` property. Refer to the documentation on more details.
 
 ### Need Help? Contact Us without Hesitation.
 Email Arpit Narechania (arpitnarechania@gatech.edu) and Kaustubh Odak (kodak@gatech.edu).
