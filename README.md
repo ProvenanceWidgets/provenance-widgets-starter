@@ -99,6 +99,8 @@ All widgets extend an existing component's class. Hence, all original properties
 ### Common Properties
 All widgets have the following common properties:
 
+- `id`: Must be provided for the library to uniquely identify the widget, and fallback for tooltip labels.
+- `data-label`: The label to display in the tooltip. If not provided, the `id` property is used.
 - `provenance`: The provenance of interactions recorded by the widget. Use this property to persist-restore or modify-reconstruct the provenance. Each widget has a different provenance type, which is described in the widget's documentation.
     - Default: `undefined`
     - Binding: `[(provenance)]` (Two-way binding)
@@ -146,7 +148,7 @@ This subset of widgets allows the user to 'select' either a single item or multi
     - Binding: `[(selected)]` (Two-way binding)
         - Syntactic sugar for `[selected]` and `(selectedChange)`
     - Widget updates when the property is changed?: Yes
-
+- **NOTE: It is mandatory to update the `selected` property when the `selectedChange` event is fired. This is because the widget relies on explicit updates to the `selected` property to update the provenance and visualization.**
 - Provenance type: [`Provenance`](node_modules/provenance-widgets/lib/provenance-widgets.service.d.ts#L18). Important properties:
     - selections: An array of time-stamped values.
     - revalidate: Whether to revalidate the provenance. If `true`, the widget will recompute the provenance from the `selections` property.
