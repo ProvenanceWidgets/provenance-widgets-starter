@@ -18,7 +18,7 @@
     "@angular/platform-browser": "^15.2.9",
     "@angular/platform-browser-dynamic": "^15.2.9",
     "@angular/router": "^15.2.9",
-    "provenance-widgets": "https://www.dropbox.com/scl/fi/4112zqx985xcw1bylib31/provenance-widgets-0.0.1.tgz?rlkey=wkd8p7k36gzcl1atggr5ic7wv&dl=1",
+    "provenance-widgets": "^0.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
