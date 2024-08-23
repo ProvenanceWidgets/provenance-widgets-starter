@@ -29,10 +29,10 @@ This will start the app on [http://localhost:4200](http://localhost:4200).
 
 ## Installation
 
-The library is hosted on Dropbox as a gzipped tarball. You can download it [here](https://www.dropbox.com/scl/fi/4112zqx985xcw1bylib31/provenance-widgets-0.0.1.tgz?rlkey=wkd8p7k36gzcl1atggr5ic7wv&dl=1). Alternatively, you can install it with npm using:
+The library can be installed with npm using:
 
 ```sh
-npm i "https://www.dropbox.com/scl/fi/4112zqx985xcw1bylib31/provenance-widgets-0.0.1.tgz?rlkey=wkd8p7k36gzcl1atggr5ic7wv&dl=1"
+npm i provenance-widgets
 ```
 
 * Note: If you wish to use it in an existing Angular application, please ensure your versions of the Angular and PrimeNG libraries are compatible with the Provenance Widgets library. Refer to the `package.json` file for more details.
