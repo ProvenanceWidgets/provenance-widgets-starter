@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "preact": "^10.29.2",
-    "provenance-widgets": "git+https://github.com/LEONL0VE/ProvenanceWidgets.git#feat/v2-v1-compat",
+    "provenance-widgets": "^2.0.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
