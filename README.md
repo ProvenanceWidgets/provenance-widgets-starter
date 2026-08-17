@@ -5,7 +5,7 @@ A minimal Vite application using the ProvenanceWidgets React API.
 ## Getting started
 
 ```bash
-git clone --branch feat/pw-v2-starter https://github.com/ProvenanceWidgets/provenance-widgets-starter.git
+git clone --branch v2 https://github.com/ProvenanceWidgets/provenance-widgets-starter.git
 cd provenance-widgets-starter
 npm install
 npm run dev
