@@ -11,14 +11,6 @@ npm install
 npm run dev
 ```
 
-Open the URL printed by Vite. Change the checkbox selection, then use its
-footprint button to switch between Aggregate and Temporal views.
-
-## Structure
-
-- `src/main.jsx` mounts React and provides the shared provenance context.
-- `src/App.jsx` contains a controlled ProvenanceWidgets example.
-- `src/styles.css` contains only starter-specific layout styles.
 
 ## Build
 
