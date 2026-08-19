@@ -12,7 +12,7 @@ This repository contains the starter code for the Provenance Widgets library. Pr
 If you wish to start from scratch, jump straight to the [Installation](#Installation) section. To use the starter code, clone this repository and install the dependencies using the following commands:
 
 ```bash
-git clone
+git clone --branch v1 https://github.com/ProvenanceWidgets/provenance-widgets-starter.git
 cd provenance-widgets-starter
 npm install
 ```
@@ -32,7 +32,7 @@ This will start the app on [http://localhost:4200](http://localhost:4200).
 The library can be installed with npm using:
 
 ```sh
-npm i provenance-widgets
+npm i provenance-widgets@^1.0.4
 ```
 
 * Note: If you wish to use it in an existing Angular application, please ensure your versions of the Angular and PrimeNG libraries are compatible with the Provenance Widgets library. Refer to the `package.json` file for more details.
